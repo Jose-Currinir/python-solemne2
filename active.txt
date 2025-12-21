@@ -1,0 +1,14 @@
+LEVANTAR EN MAC
+
+1. Activar el entorno y abrir el notebook:
+(consola bash)
+source .venv/bin/activate
+jupyter lab
+(otra consola bash)
+source .venv/bin/activate
+streamlit run dashboard.py
+
+LEVANTAR EN WINDOWS
+
+source .venv/bin/activate
+streamlit run dashboard.py
