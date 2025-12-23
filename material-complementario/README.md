@@ -4,7 +4,6 @@ Requisitos:
 - Python 3.x
 - `requirements.txt` en la raiz
 - `material-complementario/Forma_B.csv` en el repo
-- Opcional (descarga de presentacion): `material-complementario/Presentacion_Solemne_B.pptx`
 
 Deploy en Streamlit Community Cloud:
 1) Subir el repo a GitHub (incluye `material-complementario/Forma_B.csv`).

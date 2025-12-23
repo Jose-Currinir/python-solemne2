@@ -7,6 +7,9 @@ import streamlit as st
 
 st.set_page_config(page_title="Análisis de Mortalidad por Causas", layout="wide")
 
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "material-complementario"
+
 COLOR_PRIMARY = "#E53935"
 COLOR_ACCENT = "#FF6B6B"
 COLOR_BAR = "#C62828"
@@ -90,7 +93,7 @@ def exportar_excel(df: pd.DataFrame) -> bytes:
     return buffer.getvalue()
 
 
-df, causa_cols = cargar_datos("material-complementario/Forma_B.csv")
+df, causa_cols = cargar_datos(str(DATA_DIR / "Forma_B.csv"))
 
 st.title("Análisis de Mortalidad por Causas")
 st.write(
@@ -226,8 +229,8 @@ st.caption("Descarga la presentación, los datos filtrados o visita el repositor
 col_descarga_1, col_descarga_2, col_descarga_3 = st.columns([2, 2, 1])
 
 with col_descarga_1:
-    pptx_path = Path("material-complementario/Presentacion_Solemne_B.pptx")
-    pdf_path = Path("material-complementario/Presentacion_Solemne_B.pdf")
+    pptx_path = DATA_DIR / "Presentacion_Solemne_B.pptx"
+    pdf_path = DATA_DIR / "Presentacion_Solemne_B.pdf"
     if pptx_path.exists():
         st.download_button(
             "Descargar presentación (PPTX)",
